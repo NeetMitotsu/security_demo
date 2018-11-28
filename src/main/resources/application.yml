@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://localhost:3306/role_manager?autoReconnect=true&useSSL=false&useUnicode=true&characterEncoding=utf8&serverTimezone=GMT
+      username: root
+      password: root
+      driver-class-name: com.mysql.cj.jdbc.Driver
+jwt:
+  header: Authentication
+  tokenHead: "Bearer "
+  secret: mySecret
+  expiration: 604800
+  route:
+    authentication:
+      path: "/auth/gettoken"
+      refresh: "/auth/refresh"
+      register: "/auth/register"
+server:
+  port: 7000
+logging:
+  level:
+    org.springframework:
+      data: DEBUG
+      security: DEBUG
+    com.yuudati: DEBUG
